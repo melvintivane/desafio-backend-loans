@@ -16,6 +16,7 @@ public class CustomerTest {
       );
    }
 
+
    @Nested
    class IsIncomeEqualOrLowerThan {
 
@@ -24,7 +25,7 @@ public class CustomerTest {
          var customer = CustomerFactory.build(5000.00);
 
          assertTrue(
-              customer.isIncomeEqualOrLowerThan(5000.00),
+              customer.isIncomeEqualOrLessThan(5000.00),
               "Deveria retornar true quando a renda é exatamente igual ao valor especificado."
          );
       }
@@ -34,7 +35,7 @@ public class CustomerTest {
          var customer = CustomerFactory.build(3000.00);
 
          assertTrue(
-              customer.isIncomeEqualOrLowerThan(5000.00),
+              customer.isIncomeEqualOrLessThan(5000.00),
               "Deveria retornar true quando a renda é menor que o valor especificado."
          );
       }
@@ -44,7 +45,7 @@ public class CustomerTest {
          var customer = CustomerFactory.build(5000.00);
 
          assertFalse(
-              customer.isIncomeEqualOrLowerThan(3000.00),
+              customer.isIncomeEqualOrLessThan(3000.00),
               "Deveria retornar false quando a renda é maior que o valor especificado."
          );
       }
@@ -129,6 +130,7 @@ public class CustomerTest {
          );
       }
    }
+
 
    @Nested
    class IsAgeLowerThan {
