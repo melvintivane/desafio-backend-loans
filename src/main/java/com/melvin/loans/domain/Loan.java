@@ -2,7 +2,10 @@ package com.melvin.loans.domain;
 
 public class Loan {
 
-   private final Customer customer;
+   private Customer customer;
+
+   public Loan() {
+   }
 
    public Loan(Customer customer) {
       this.customer = customer;
@@ -45,7 +48,7 @@ public class Loan {
    }
 
    private boolean isBasicLoanAvailable() {
-      if (customer.isIncomeEqualOrLowerThan(3000.00)) {
+      if (customer.isIncomeEqualOrLessThan(3000.00)) {
          return true;
       }
 
